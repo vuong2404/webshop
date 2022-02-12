@@ -1,0 +1,213 @@
+/* Mobile & tablet  */
+@media (max-width: 1023px) {
+    .hide-on-mobile-tablet {
+        display: none;
+    } 
+    .header {
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        width: 100%;
+    }
+    .header__cart--containers {
+        width: 56px;
+        text-align: right;
+        
+    } 
+    .header__cart-list { 
+        display: none;
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        width: 100%; 
+        padding: 0 32px;
+    }
+    .header__cart-list::after {
+        display: none;
+    }  
+    
+    .header__cart--heading {
+        margin: 12px 0;
+    }
+    .header__cart--item {
+        padding: 8px 0;
+    } 
+    .header__cart--item-name {
+        padding-right: 60px;
+    }
+    .header__cart--list-items {
+        max-height: 20vh;
+    }
+    .header__cart--list-items::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .container {
+        margin-top: calc(var(--header-height) + var(--header-sortbar-height)); 
+        padding-top: 12px;
+    }
+    .category {
+        position: fixed;
+        top: 0;
+        left: 0; 
+        bottom: 0;
+        background-color: var(--white-color); 
+        width: 50%; 
+        height: 100%;
+        z-index: 21;
+        padding-left: 16px;
+        border: none;
+        transform: translateX(-110%);
+        box-shadow: 0 1px 6px rgba(0, 0 ,0, 0.2);
+    }
+    .category-heading  .category--list-icon {
+        display: none;
+    }
+    .category-tablet--close-btn {
+        display: block;
+    }
+
+    .header__nav-category-list--btn {
+        display: block;
+    }
+    #input-checkbox:checked ~.category {
+        transform: translateX(0); 
+    }
+    #input-checkbox:checked ~.tablet-category-overlay {
+        display: block;
+    } 
+
+    .category-item {
+        padding: 16px 12px;
+    }
+    .category-item--active .catagory-item--link::before { 
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    :root {
+        --header-height: 80px ; 
+        --header-nav-height: 0px ; 
+    }
+    .wide {
+        width: 100%;
+        padding: 0 32px;
+    }
+    .hide-on-tablet {
+        display: none;
+    } 
+    .header-sortbar {
+        display: flex;
+    }
+}
+
+/* Mobile */ 
+@media (max-width: 739px) { 
+    :root {
+        --header-height: 60px ; 
+        --header-nav-height: 0px ; 
+    }
+    .hine-on-mobile {
+        display: none; 
+    }
+    .header-with-search {
+        position: relative;
+        padding-right: 12px;
+    } 
+    .header__searchbar {
+        display: none;
+    }
+    .header__cart-list {
+        padding: 0 12px;
+    }
+    .header__cart--containers {
+        width: 60px;
+        order: 4;
+    }
+    .header__nav-category-list--icon {
+        order: 1;
+        padding: 12px;
+    }
+    .header__logo {
+        margin: 0 auto;
+        order: 3;
+        transform: translateX(25%);
+        /* flex: 0; */
+    }
+    .header__logo-icon {
+        width: 120px;
+    }
+    .category { 
+        width: 100%;
+    }
+    .header__mobile--search-icon {
+        display: inline;
+    }
+    .header__searchbar--container:hover .header__searchbar  {
+        display: inline-flex;
+    } 
+    .header__nav-category-list--btn {
+        margin-right: 0;
+    }
+    
+
+    @keyframes searchbarFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50%);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .pagination-item {
+        padding: 0 2px;
+    } 
+    .container {
+        margin-top: var(--header-height) ;
+        padding-top: 32px;
+    }
+
+    .footer {
+        padding-left: 16px;
+    } 
+    .mobile__footer-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .mobile__footer-item {
+        width: 50%;
+    }
+    
+    .footer-transportation-item,
+    .footer-pay-item {
+         padding: 4px 12px;
+    }
+    .header__searchbar--container .header__mobile--search-icon{
+        display: block;
+    }
+    
+    .header__searchbar--container {
+        display: block;
+        order: 2;
+        max-width: 50px;
+    }
+    .header__searchbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0 ;
+        top: var(--header-height); 
+        animation: searchbarFadeIn linear 0.3s;
+        display: none;
+        flex: 0;
+    }
+    .header__search--option {
+        display: none;
+    }
+    
+} 
